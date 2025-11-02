@@ -1,0 +1,13 @@
+int* smallerNumbersThanCurrent(int* num, int numsize, int* returnsize){
+    *returnsize = numsize;
+    int* result = (int*)malloc(numsize * sizeof(int));
+    for (int i = 0; i < numsize; i++) {
+        int count = 0;
+        for (int j = 0; j < numsize; j++) {
+            if (num[j] < num[i])
+                count++;
+        }
+        result[i] = count;
+    }
+    return result;
+}
